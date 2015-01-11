@@ -17,7 +17,7 @@ module.exports = class ChuckNorris
   _value: (f, cb) -> @_req f, (err, data) -> if err then cb err else cb null, data.value
   _req: (f, cb) ->
     opts = 
-      path:'/'+f+'?firstName='+@fname+'&lastName='+@lname
+      path:'/'+f+'?firstName='+@fname+'&lastName='+@lname+'&limitTo=[nerdy]'
       host: 'api.icndb.com'
       port: 80
     http.get opts, (res) ->
